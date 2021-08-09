@@ -1,3 +1,14 @@
+function showError($msg){
+    $('#errorText').empty();
+    $('#errorText').append($msg);
+}
+
 $(document).ready(function(){
-    console.log("Start");
+    // Submitting Form
+    $('#basicForm').on('submit', function(e){
+        e.preventDefault();
+        if($('#urlInput').val() == ""){
+            showError("Enter URL");
+        }
+    });
 });
