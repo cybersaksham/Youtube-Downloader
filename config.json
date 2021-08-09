@@ -1,3 +1,4 @@
 {
-  "debug": true
+  "debug": true,
+  "SECRET_KEY": "NOT_SO_SECRET"
 }

@@ -32,15 +32,17 @@
     <div class="modal fade" id="typesModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Select Type</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="mb-3">
-                        <select id="selectInput" class="form-select"></select>
+                    <div class="modal-header">
+                        <h5 class="modal-title">Select Resolution</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                </div>
+                <form id="mainForm" action="/download" method="POST">
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <select id="selectInput" name="resolution" class="form-select"></select>
+                        </div>
+                    </div>
+                </form>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     <button type="button" id="downloadBtn" class="btn btn-primary">Download</button>

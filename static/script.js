@@ -6,20 +6,13 @@ function showError($msg){
 function appendTypes($data){
     $('#selectInput').empty();
     $.each($data, function(index, value){
-        $appendTxt = "<option value=\"" + index + "\">" + value["type"] + " - " + value["mime_type"];
-        if(value["type"] == "video"){
-            $appendTxt += " - " + value["res"]
-        }
-        else{
-            $appendTxt += " - " + value["abr"]
-        }
-        $appendTxt += "</option>";
+        $appendTxt = "<option value=\"" + value + "\">" + value + "</option>";
         $('#selectInput').append($appendTxt);
     });
 }
 
 $(document).ready(function(){
-    // Submitting URL
+    // Getting Video types
     $('#getTypes').click(function(e){
         e.preventDefault();
         if($('#urlInput').val() == ""){
@@ -27,7 +20,6 @@ $(document).ready(function(){
         }
         else{
             showError("");
-            // Sending request to get types
             $.ajax({
                 url: '/get_types',
                 method: 'POST',
@@ -48,6 +40,6 @@ $(document).ready(function(){
     // Pressing download button
     $('#downloadBtn').click(function(e){
         e.preventDefault();
-        console.log($('#selectInput').val());
+        $('#mainForm').submit();
     });
 });
