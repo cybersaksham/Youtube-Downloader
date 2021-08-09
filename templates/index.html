@@ -26,18 +26,23 @@
             <button type="submit" id="getTypes" class="btn btn-primary">
                 Download
             </button>
+            <button style="display: none;" id="typesLoader" class="btn btn-primary" type="button" disabled>
+                <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                Loading...
+            </button>
         </fieldset>
     </form>
     <!-- Types Modal -->
     <div class="modal fade" id="typesModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Select Resolution</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
+                <div class="modal-header">
+                    <h5 class="modal-title">Select Resolution</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
                 <form id="mainForm" action="/download" method="POST">
                     <div class="modal-body">
+                        <p>High Resolution will take more time depending on your internet speed.</p>
                         <div class="mb-3">
                             <select id="selectInput" name="resolution" class="form-select"></select>
                         </div>

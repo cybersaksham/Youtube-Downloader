@@ -31,8 +31,8 @@ def get_types():
             videos = list(yt.streams.filter(progressive=True))
             session["url"] = url__
             return jsonify(error=None, types=[str(video.resolution) for video in videos])
-        except Exception as e:
-            return jsonify(error=str(e), types=None)
+        except:
+            return jsonify(error="Some Error Occurred", types=None)
 
 
 @app.route('/download', methods=["POST"])

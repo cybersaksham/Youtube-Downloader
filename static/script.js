@@ -20,6 +20,8 @@ $(document).ready(function(){
         }
         else{
             showError("");
+            $('#getTypes').hide();
+            $('#typesLoader').show();
             $.ajax({
                 url: '/get_types',
                 method: 'POST',
@@ -32,6 +34,8 @@ $(document).ready(function(){
                         appendTypes(res["types"]);
                         $('#typesModal').modal('show');
                     }
+                    $('#getTypes').show();
+                    $('#typesLoader').hide();
                 }
             });
         }
