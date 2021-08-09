@@ -36,8 +36,8 @@ def get_types():
                     if "abr" == item.split("=")[0]:
                         dict__[index + 1]["abr"] = item.split("=")[1].split("\"")[1]
             return jsonify(error=None, types=dict__)
-        except Exception as e:
-            return jsonify(error=str(e), types=None)
+        except:
+            return jsonify(error="Some Error Occurred", types=None)
 
 
 if __name__ == '__main__':
